@@ -9,7 +9,9 @@
         <div
           class="flex-shrink-0 flex items-center text-xl font-bold text-blue-600"
         >
-          مؤسسة كلين
+          <a href="#">
+            <img src="../assets/Logo.png" class="w-13 h-13" alt="" />
+          </a>
         </div>
 
         <!-- Links - Large screens -->
@@ -33,9 +35,15 @@
           >
 
           <a
-            href="#"
+            href="#location"
             class="text-gray-700 dark:text-gray-300 hover:text-blue-500"
-            >Contact</a
+            >موقعنا</a
+          >
+
+          <a
+            href="#contact"
+            class="text-gray-700 dark:text-gray-300 hover:text-blue-500"
+            >تواصل معنا</a
           >
         </div>
 
@@ -65,17 +73,17 @@
     <!-- Dropdown menu - Small screens -->
     <div
       v-if="isOpen"
-      class="md:hidden bg-white dark:bg-gray-800 px-4 pt-2 pb-4 space-y-2"
+      class="md:hidden bg-white dark:bg-gray-800 px-4 pt-2 pb-4 space-y-2 flex flex-col justify-center items-center"
     >
       <a
-        href="#"
+        href="#home"
         class="block text-gray-700 dark:text-gray-300 hover:text-blue-500"
-        >Home</a
+        >الرئيسية</a
       >
       <a
-        href="#"
+        href="#services"
         class="block text-gray-700 dark:text-gray-300 hover:text-blue-500"
-        >About</a
+        >خدماتنا</a
       >
       <a
         href="#"
@@ -83,9 +91,19 @@
         >Services</a
       >
       <a
-        href="#"
+        href="#portfolio"
         class="block text-gray-700 dark:text-gray-300 hover:text-blue-500"
-        >Contact</a
+        >بعض اعمالنا</a
+      >
+      <a
+        href="#location"
+        class="block text-gray-700 dark:text-gray-300 hover:text-blue-500"
+        >موقعنا</a
+      >
+      <a
+        href="#contact"
+        class="block text-gray-700 dark:text-gray-300 hover:text-blue-500"
+        >تواصل معنا</a
       >
     </div>
   </nav>
