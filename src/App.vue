@@ -7,6 +7,7 @@
     <LocationSection />
     <ContactSection />
     <WhatsappButton />
+    <ScrollToTop />
     <Footer />
   </div>
 </template>
@@ -18,6 +19,7 @@ import HomeSection from "./components/HomeSection.vue";
 import LocationSection from "./components/LocationSection.vue";
 import Navbar from "./components/Navbar.vue";
 import PortfolioSection from "./components/PortfolioSection.vue";
+import ScrollToTop from "./components/ScrollToTop.vue";
 import ServicesSection from "./components/ServicesSection.vue";
 import WhatsappButton from "./components/WhatsappButton.vue";
 </script>

@@ -1,10 +1,9 @@
 <template>
-  <nav
-    class="bg-white dark:bg-gray-800 shadow-md fixed w-full z-50"
-    data-aos="fade-down"
+  <header
+    class="fixed top-0 left-0 w-full z-50 bg-white dark:bg-gray-900 shadow"
   >
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between h-16">
+    <div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
+      <div class="text-xl font-bold text-blue-600">
         <!-- Logo -->
         <div
           class="flex-shrink-0 flex items-center text-xl font-bold text-blue-600"
@@ -13,106 +12,88 @@
             <img src="../assets/Logo.png" class="w-13 h-13" alt="" />
           </a>
         </div>
-
-        <!-- Links - Large screens -->
-        <div class="hidden md:flex space-x-6 items-center">
-          <a
-            href="#home"
-            class="text-gray-700 dark:text-gray-300 hover:text-blue-400"
-            >الرئيسية</a
-          >
-
-          <a
-            href="#services"
-            class="text-gray-700 dark:text-gray-300 hover:text-blue-500"
-            >خدماتنا</a
-          >
-
-          <a
-            href="#portfolio"
-            class="text-gray-700 dark:text-gray-300 hover:text-blue-500"
-            >بعض اعمالنا</a
-          >
-
-          <a
-            href="#location"
-            class="text-gray-700 dark:text-gray-300 hover:text-blue-500"
-            >موقعنا</a
-          >
-
-          <a
-            href="#contact"
-            class="text-gray-700 dark:text-gray-300 hover:text-blue-500"
-            >تواصل معنا</a
-          >
-        </div>
-
-        <!-- Hamburger button -->
-        <div class="flex items-center md:hidden transition">
-          <button
-            @click="toggleMenu"
-            class="text-gray-700 dark:text-gray-300 focus:outline-none"
-          >
-            <svg
-              class="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path v-if="!isOpen" d="M4 6h16M4 12h16M4 18h16" />
-              <path v-else d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
       </div>
+
+      <!-- زر الهامبورجر -->
+      <button
+        @click="toggleSidebar"
+        class="md:hidden text-gray-700 dark:text-white"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-7 h-7"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+
+      <!-- روابط سطح المكتب -->
+      <nav class="hidden md:flex gap-6 text-gray-700 dark:text-white">
+        <a href="#home" class="hover:text-blue-600 transition">الرئيسية</a>
+        <a href="#services" class="hover:text-blue-600 transition">خدماتنا</a>
+        <a href="#portfolio" class="hover:text-blue-600 transition">أعمالنا</a>
+        <a href="#location" class="hover:text-blue-600 transition">موقعنا</a>
+        <a href="#contact" class="hover:text-blue-600 transition">تواصل معنا</a>
+      </nav>
     </div>
 
-    <!-- Dropdown menu - Small screens -->
-    <div
-      v-if="isOpen"
-      class="md:hidden bg-white dark:bg-gray-800 px-4 pt-2 pb-4 space-y-2 flex flex-col justify-center items-center"
-    >
-      <a
-        href="#home"
-        class="block text-gray-700 dark:text-gray-300 hover:text-blue-500"
-        >الرئيسية</a
+    <!-- القائمة الجانبية للهامبورجر -->
+    <transition name="slide">
+      <aside
+        v-if="sidebarOpen"
+        class="fixed top-0 right-0 w-64 h-full bg-white dark:bg-gray-800 shadow-lg z-50 p-6 md:hidden"
       >
-      <a
-        href="#services"
-        class="block text-gray-700 dark:text-gray-300 hover:text-blue-500"
-        >خدماتنا</a
-      >
-      <a
-        href="#"
-        class="block text-gray-700 dark:text-gray-300 hover:text-blue-500"
-        >Services</a
-      >
-      <a
-        href="#portfolio"
-        class="block text-gray-700 dark:text-gray-300 hover:text-blue-500"
-        >بعض اعمالنا</a
-      >
-      <a
-        href="#location"
-        class="block text-gray-700 dark:text-gray-300 hover:text-blue-500"
-        >موقعنا</a
-      >
-      <a
-        href="#contact"
-        class="block text-gray-700 dark:text-gray-300 hover:text-blue-500"
-        >تواصل معنا</a
-      >
-    </div>
-  </nav>
+        <button
+          @click="toggleSidebar"
+          class="mb-6 text-gray-600 dark:text-gray-300"
+        >
+          ✕ إغلاق
+        </button>
+
+        <nav class="flex flex-col gap-4 text-lg text-gray-800 dark:text-white">
+          <a href="#home" @click="navigateAndClose">الرئيسية</a>
+          <a href="#services" @click="navigateAndClose">خدماتنا</a>
+          <a href="#portfolio" @click="navigateAndClose">أعمالنا</a>
+          <a href="#location" @click="navigateAndClose">موقعنا</a>
+          <a href="#contact" @click="navigateAndClose">تواصل معنا</a>
+        </nav>
+      </aside>
+    </transition>
+  </header>
 </template>
 
 <script setup>
 import { ref } from "vue";
-const isOpen = ref(false);
-const toggleMenu = () => {
-  isOpen.value = !isOpen.value;
+
+const sidebarOpen = ref(false);
+
+const toggleSidebar = () => {
+  sidebarOpen.value = !sidebarOpen.value;
+};
+
+const navigateAndClose = () => {
+  sidebarOpen.value = false;
 };
 </script>
+
+<style scoped>
+/* تحريك الشريحة */
+.slide-enter-active,
+.slide-leave-active {
+  transition: transform 0.3s ease;
+}
+.slide-enter-from {
+  transform: translateX(100%);
+}
+.slide-leave-to {
+  transform: translateX(100%);
+}
+</style>
