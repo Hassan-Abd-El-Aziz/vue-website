@@ -1,11 +1,13 @@
 <template>
   <Navbar />
   <div class="pt-20 p-4">
-    <!-- باقي المحتوى هنا -->
-    <h1 class="text-3xl font-bold">Welcome to the site</h1>
+    <HomeSection />
+    <ServicesSection />
   </div>
 </template>
 
 <script setup>
+import HomeSection from "./components/HomeSection.vue";
 import Navbar from "./components/Navbar.vue";
+import ServicesSection from "./components/ServicesSection.vue";
 </script>

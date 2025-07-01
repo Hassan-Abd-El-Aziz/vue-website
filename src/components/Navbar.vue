@@ -1,5 +1,8 @@
 <template>
-  <nav class="bg-white dark:bg-gray-800 shadow-md fixed w-full z-50">
+  <nav
+    class="bg-white dark:bg-gray-800 shadow-md fixed w-full z-50"
+    data-aos="fade-down"
+  >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-16">
         <!-- Logo -->
@@ -12,7 +15,7 @@
         <!-- Links - Large screens -->
         <div class="hidden md:flex space-x-6 items-center">
           <a
-            href="#"
+            href="home"
             class="text-gray-700 dark:text-gray-300 hover:text-blue-400"
             >Home</a
           >
@@ -34,7 +37,7 @@
         </div>
 
         <!-- Hamburger button -->
-        <div class="flex items-center md:hidden">
+        <div class="flex items-center md:hidden transition">
           <button
             @click="toggleMenu"
             class="text-gray-700 dark:text-gray-300 focus:outline-none"
