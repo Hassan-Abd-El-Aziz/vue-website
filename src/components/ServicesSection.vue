@@ -11,7 +11,7 @@
         <div
           v-for="(service, index) in services"
           :key="index"
-          class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 text-center transform transition hover:-translate-y-2 hover:shadow-2xl duration-300"
+          class="bg-white dark:bg-gray-800 rounded-2xl border-gray-300 shadow-lg p-6 text-center transform transition hover:-translate-y-2 hover:shadow-2xl duration-300"
           :data-aos="'zoom-in'"
           :data-aos-delay="index * 100"
         >

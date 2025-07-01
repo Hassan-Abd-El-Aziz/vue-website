@@ -9,26 +9,29 @@
         <div
           class="flex-shrink-0 flex items-center text-xl font-bold text-blue-600"
         >
-          MyLogo
+          مؤسسة كلين
         </div>
 
         <!-- Links - Large screens -->
         <div class="hidden md:flex space-x-6 items-center">
           <a
-            href="home"
+            href="#home"
             class="text-gray-700 dark:text-gray-300 hover:text-blue-400"
-            >Home</a
+            >الرئيسية</a
           >
+
           <a
-            href="#"
+            href="#services"
             class="text-gray-700 dark:text-gray-300 hover:text-blue-500"
-            >About</a
+            >خدماتنا</a
           >
+
           <a
-            href="#"
+            href="#portfolio"
             class="text-gray-700 dark:text-gray-300 hover:text-blue-500"
-            >Services</a
+            >بعض اعمالنا</a
           >
+
           <a
             href="#"
             class="text-gray-700 dark:text-gray-300 hover:text-blue-500"
